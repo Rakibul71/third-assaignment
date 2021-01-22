@@ -71,13 +71,24 @@ console.log(totalCost);
 
 
 // Exercise Four
-function megaFriend(arr) {
-    var word = "";
-    for (var i = 0; i < arr.length; i++) {
-        if (word.length < arr[i].length) {
-            word = arr[i];
+
+function megaFriend(friendsName) {
+
+    var biggestName = friendsName[0];
+
+    if (friendsName.length == 0){
+        //If user input empty array this message will be shown
+        return "Array can't be empty in This case. Please provide some values"
+    }
+    for (var i = 0; i < friendsName.length; i++) {
+
+        var tempContainer = friendsName[i];
+
+        if (tempContainer.length > biggestName.length) {
+            biggestName = tempContainer;
         }
     }
-    return word;
+    return biggestName;
+
+
 }
-console.log(megaFriend(['Tamim Iqbal', 'Sakib al Hasan', 'Mashrafee Mortaza', 'RakibulIslam']));
